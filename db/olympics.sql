@@ -1,9 +1,11 @@
+DROP TABLE participation;
+DROP TABLE events;
 DROP TABLE athletes;
 DROP TABLE nations;
-DROP TABLE events;
 
 
-CREATE TABLE athletes(
+
+CREATE TABLE athletes (
   id serial4 PRIMARY KEY,
   name VARCHAR(255),
   nation_id INT4 references nations(id) ON DELETE CASCADE

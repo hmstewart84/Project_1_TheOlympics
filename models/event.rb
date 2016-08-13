@@ -2,30 +2,33 @@ require('pg')
 require_relative('../db/sql_runner')
  
 
-class Book
+class Event
 
-  attr_reader :id, :title, :author
+  attr_reader :id, :name, :sport, :gold_id, :silver_id, :bronze_id
 
   def initialize(options)
     @id = options['id'].to_i
-    @title = options['title']
-    @author = options['author']
+    @name = options['name']
+    @sport = options['sport']
+    @gold_id = options['gold_id'].to_i
+    @silver_id = options['silver_id'].to_i
+    @bronze_id = options['bronze_id'].to_i
   end
 
   def save()
-    sql = "INSERT INTO books (title, author) VALUES ('#{@title}', '#{@author}' ) RETURNING *"
-    book = SqlRunner.run(sql).first
-    @id = book['id']
+    sql = "INSERT INTO events (name, sport) VALUES ('#{@name}', '#{@sport}' ) RETURNING *"
+    event = SqlRunner.run(sql).first
+    @id = event['id']
   end
 
   def self.all()
-    sql = "SELECT * FROM books"
-    return Book.map_items(sql)
+    sql = "SELECT * FROM events"
+    return Event.map_items(sql)
   end
 
   def self.find(id)
-    sql = "SELECT * FROM books WHERE id = #{id}"
-    return Book.map_item(sql)
+    sql = "SELECT * FROM events WHERE id = #{id}"
+    return Event.map_item(sql)
   end
 
   def self.delete_all()
