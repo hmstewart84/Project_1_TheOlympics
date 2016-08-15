@@ -22,11 +22,11 @@ nation3.save
 nation4.save
 nation5.save
 
-athlete1 = Athlete.new({ 'first_name' => 'Hannah', 'last_name' => 'Stewart', 'nation_id' => 'nation1'})
-athlete2 = Athlete.new({ 'first_name' => 'Katrina', 'last_name' => 'Coutts', 'nation_id' => 'nation2'})
-athlete3 = Athlete.new({ 'first_name' => 'David', 'last_name' => 'Morrison', 'nation_id' => 'nation3'})
-athlete4 = Athlete.new({ 'first_name' => 'John', 'last_name' => 'Easton', 'nation_id' => 'nation4'})
-athlete5 = Athlete.new({ 'first_name' => 'Michael', 'last_name' => 'Snaddon', 'nation_id' => 'nation5'})
+athlete1 = Athlete.new({ 'first_name' => 'Hannah', 'last_name' => 'Stewart', 'nation_id' => nation1.id})
+athlete2 = Athlete.new({ 'first_name' => 'Katrina', 'last_name' => 'Coutts', 'nation_id' => nation2.id})
+athlete3 = Athlete.new({ 'first_name' => 'David', 'last_name' => 'Morrison', 'nation_id' => nation3.id})
+athlete4 = Athlete.new({ 'first_name' => 'John', 'last_name' => 'Easton', 'nation_id' => nation4.id})
+athlete5 = Athlete.new({ 'first_name' => 'Michael', 'last_name' => 'Snaddon', 'nation_id' => nation5.id})
 
 athlete1.save
 athlete2.save
@@ -60,5 +60,3 @@ participation3.save
 participation4.save
 participation5.save
 
-# binding.pry
-# nil

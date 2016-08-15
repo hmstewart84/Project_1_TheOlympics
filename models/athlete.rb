@@ -17,7 +17,7 @@ class Athlete
   end  
 
   def save()
-    sql = "INSERT INTO athletes (first_name, last_name) VALUES ('#{@first_name}', '#{@last_name}' ) RETURNING *"
+    sql = "INSERT INTO athletes (first_name, last_name, nation_id) VALUES ('#{@first_name}', '#{@last_name}', '#{@nation_id}' ) RETURNING *"
     athlete = SqlRunner.run(sql).first
     @id = athlete['id']
   end
@@ -73,9 +73,9 @@ class Athlete
     return Nation.map_item(sql)
   end
   
-  def event()
+  def events()
     sql = "SELECT e.* FROM events e INNER JOIN participations p ON p.event_id = e.id WHERE p.athlete_id = #{@id}"
-    return Event.map_item(sql)
+    return Event.map_items(sql)
   end  
 
 end

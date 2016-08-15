@@ -42,9 +42,9 @@ class Nation
       return result.first
     end
 
-    def athlete()
+    def athletes()
         sql = "SELECT * FROM athletes WHERE nation_id = #{@id}"
-        return Athlete.map_item(sql)
+        return Athlete.map_items(sql)
     end
 
     def self.update( options )

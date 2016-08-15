@@ -1,4 +1,5 @@
 require_relative('../models/athlete')
+require('pry-byebug')
 
 #index
 get '/athletes' do
