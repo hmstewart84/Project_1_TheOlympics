@@ -48,24 +48,26 @@ class Athlete
     return result.first
   end
 
-  def gold_medals
+  # def gold_medals
 
-  end
+  # end
   
-  def silver_medals
+  # def silver_medals
 
-  end
+  # end
 
-  def bronze_medals
+  # def bronze_medals
 
-  end  
+  # end  
 
   def nation()
-
+    sql = "SELECT * FROM nations WHERE nation_id = #{@id}"
+    return Nation.map_item(sql)
   end
   
   def events()
-
+    sql = "SELECT e.* FROM events e INNER JOIN participations p ON p.event_id = e.id WHERE athlete_id = #{@id}"
+    return Event.map_item(sql)
   end  
 
 end

@@ -46,4 +46,9 @@ class Event
     return result.first
   end
 
+  def athletes
+    sql = "SELECT a.* FROM athletes a INNER JOIN participations p ON p.athlete_id = a.id WHERE event_id = #{@id}"
+    return Athlete.map_item(sql)
+  end  
+
 end

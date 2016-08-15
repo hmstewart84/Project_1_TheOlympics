@@ -7,18 +7,7 @@ require_relative('../models/participation.rb')
 Athlete.delete_all()
 Event.delete_all()
 Nation.delete_all()
-
-athlete1 = Athlete.new({ 'first_name' => 'Hannah', 'last_name' => 'Stewart'})
-athlete2 = Athlete.new({ 'first_name' => 'Katrina', 'last_name' => 'Coutts'})
-athlete3 = Athlete.new({ 'first_name' => 'David', 'last_name' => 'Morrison'})
-athlete4 = Athlete.new({ 'first_name' => 'John', 'last_name' => 'Easton'})
-athlete5 = Athlete.new({ 'first_name' => 'Michael', 'last_name' => 'Snaddon'})
-
-athlete1.save
-athlete2.save
-athlete3.save
-athlete4.save
-athlete5.save
+Participation.delete_all()
 
 
 nation1 = Nation.new({ 'name' => 'South Africa'})
@@ -32,6 +21,19 @@ nation2.save
 nation3.save
 nation4.save
 nation5.save
+
+athlete1 = Athlete.new({ 'first_name' => 'Hannah', 'last_name' => 'Stewart', 'nation_id' => 'nation1'})
+athlete2 = Athlete.new({ 'first_name' => 'Katrina', 'last_name' => 'Coutts', 'nation_id' => 'nation2'})
+athlete3 = Athlete.new({ 'first_name' => 'David', 'last_name' => 'Morrison', 'nation_id' => 'nation3'})
+athlete4 = Athlete.new({ 'first_name' => 'John', 'last_name' => 'Easton', 'nation_id' => 'nation4'})
+athlete5 = Athlete.new({ 'first_name' => 'Michael', 'last_name' => 'Snaddon', 'nation_id' => 'nation5'})
+
+athlete1.save
+athlete2.save
+athlete3.save
+athlete4.save
+athlete5.save
+
 
 event1 = Event.new({ 'name' => 'Ping pong'})
 event2 = Event.new({ 'name' => 'Javelin'})

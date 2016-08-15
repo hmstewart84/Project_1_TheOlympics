@@ -19,7 +19,7 @@ class Participation
   end
 
   def athlete()
-    sql = "SELECT * FROM athlete WHERE id = #{@athlete_id}"
+    sql = "SELECT * FROM athletes WHERE id = #{@athlete_id}"
     return Athlete.map_item(sql)
   end
 

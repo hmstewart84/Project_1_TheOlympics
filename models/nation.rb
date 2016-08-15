@@ -42,6 +42,15 @@ class Nation
       return result.first
     end
 
+    def athlete()
+        sql = "SELECT * FROM athletes WHERE id = #{@athlete_id}"
+        return Athlete.map_item(sql)
+      end
+    
+    def nation_gold_medals
+
+    end  
+
   end
 
 
