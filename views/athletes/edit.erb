@@ -3,15 +3,9 @@
   <h2>Edit Athlete</h2>
 
   <form action="/athletes/<%= @athlete.id %>" method="post">
-    <input type="hidden" name="_method" value="put">
     <label for="name">Name:</label>
-    <input type="text" name="name" value="<%= @athlete.name %>"><br>
+    <input type="text" name="name" value="<%= @athlete.pretty_name %>"><br>
     
-    <select name="event_id">
-        <% @events.each do |event| %>
-          <option value="<%= event.id %>" <%= 'selected' if @athlete.event.id == event.id %>><%= event.name %></option>    
-        <%  end %>
-    </select>
 
     <input type='submit' value="Update athlete">
   </form>

@@ -21,7 +21,7 @@ end
 
 #edit
 get '/athletes/:id/edit' do
-  @athlete = Athlete.new(params[:id])
+  @athlete = Athlete.find(params[:id])
   erb(:'athletes/edit')
 end
 
@@ -34,8 +34,12 @@ end
 
 #update
 post '/athletes/:id' do
+  @athlete = Athlete.update( params )
+  redirect to( "/athletes/#{params[:id]}" )
 end
 
 #delete
 delete '/athletes' do
+  Athlete.destroy( params[:id] )
+  redirect to('/athletes')
 end

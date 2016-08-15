@@ -34,8 +34,12 @@ end
 
 #update
 post '/nations/:id' do
+@nation = Nation.update( params )
+redirect to( "/nations/#{params[:id]}" )
 end
 
 #delete
 delete '/nations' do
+  Nation.destroy( params[:id] )
+  redirect to('/nations')
 end

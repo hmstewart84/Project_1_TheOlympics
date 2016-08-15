@@ -19,7 +19,7 @@ end
 
 #edit
 get '/events/:id/edit' do
-  @event = Event.new(params[:id])
+  @event = Event.find(params[:id])
   erb(:'events/edit')
 end
 
@@ -32,8 +32,12 @@ end
 
 #update
 post '/events/:id' do
+  @event = Event.update( params )
+  redirect to( "/events/#{params[:id]}" )
 end
 
 #delete
 delete '/events' do
+  Event.destroy( params[:id] )
+  redirect to('/events')
 end

@@ -13,7 +13,7 @@ class Athlete
   end
 
   def pretty_name
-    return @first_name.concat( " #{@last_name}" )
+    return @first_name.concat( "#{@last_name}" )
   end  
 
   def save()
