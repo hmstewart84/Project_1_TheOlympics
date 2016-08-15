@@ -3,16 +3,21 @@ require_relative('../db/sql_runner')
 
 class Athlete
 
-  attr_reader :id, :name, :nation_id
+  attr_reader :id, :first_name, :last_name, :nation_id
 
   def initialize(options)
     @id = options['id'].to_i
-    @name = options['name']
+    @first_name = options['first_name']
+    @last_name = options['last_name']
     @nation_id = options['nation_id'].to_i
   end
 
+  def pretty_name
+    return @first_name.concat( " #{@last_name}" )
+  end  
+
   def save()
-    sql = "INSERT INTO athletes (name) VALUES ('#{@name}' ) RETURNING *"
+    sql = "INSERT INTO athletes (first_name, last_name) VALUES ('#{@first_name}', '#{@last_name}' ) RETURNING *"
     athlete = SqlRunner.run(sql).first
     @id = athlete['id']
   end
@@ -32,7 +37,6 @@ class Athlete
     SqlRunner.run(sql)
   end
 
-
   def self.map_items(sql)
     athlete = SqlRunner.run(sql)
     result = athlete.map { |athlete| Athlete.new( athlete ) }
@@ -43,5 +47,25 @@ class Athlete
     result = Athlete.map_items(sql)
     return result.first
   end
+
+  def gold_medals
+
+  end
+  
+  def silver_medals
+
+  end
+
+  def bronze_medals
+
+  end  
+
+  def nation()
+
+  end
+  
+  def events()
+
+  end  
 
 end
