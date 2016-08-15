@@ -69,12 +69,12 @@ class Athlete
   # end  
 
   def nation()
-    sql = "SELECT * FROM nations WHERE id = #{@id}"
+    sql = "SELECT * FROM nations WHERE id = #{@nation_id}"
     return Nation.map_item(sql)
   end
   
   def event()
-    sql = "SELECT e.* FROM events e INNER JOIN participations p ON p.event_id = e.id WHERE athlete_id = #{@id}"
+    sql = "SELECT e.* FROM events e INNER JOIN participations p ON p.event_id = e.id WHERE p.athlete_id = #{@id}"
     return Event.map_item(sql)
   end  
 
