@@ -1,6 +1,6 @@
 require('pg')
 require_relative('../db/sql_runner')
- 
+
 
 class Event
 
@@ -49,6 +49,16 @@ class Event
   def athletes
     sql = "SELECT a.* FROM athletes a INNER JOIN participations p ON p.athlete_id = a.id WHERE event_id = #{@id}"
     return Athlete.map_item(sql)
+  end  
+
+  def self.update( options )
+    sql = "UPDATE events set
+    name='#{options['name'] }'
+    gold_id='#{options['gold_id'] }'
+    silver_id='#{options['silver_id'] }'
+    bronze_id='#{options['bronze_id'] }'
+    WHERE id=#{options['id']}"
+    SqlRunner.run( sql )
   end  
 
 end

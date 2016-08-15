@@ -8,6 +8,8 @@ end
 
 #new
 get '/athletes/new' do
+  @nations = Nation.all
+  @events = Event.all
   erb(:'athletes/new')
 end
 

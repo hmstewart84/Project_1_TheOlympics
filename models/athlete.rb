@@ -48,6 +48,14 @@ class Athlete
     return result.first
   end
 
+  def self.update( options )
+    sql = "UPDATE athletes set
+          first_name='#{options['first_name'] }'
+          last_name= '#{options['last_name'] }'
+          WHERE id=#{options['id']}"
+    SqlRunner.run( sql )
+  end  
+
   # def gold_medals
 
   # end
@@ -61,11 +69,11 @@ class Athlete
   # end  
 
   def nation()
-    sql = "SELECT * FROM nations WHERE nation_id = #{@id}"
+    sql = "SELECT * FROM nations WHERE id = #{@id}"
     return Nation.map_item(sql)
   end
   
-  def events()
+  def event()
     sql = "SELECT e.* FROM events e INNER JOIN participations p ON p.event_id = e.id WHERE athlete_id = #{@id}"
     return Event.map_item(sql)
   end  

@@ -45,11 +45,18 @@ class Nation
     def athlete()
         sql = "SELECT * FROM athletes WHERE id = #{@athlete_id}"
         return Athlete.map_item(sql)
-      end
-    
-    def nation_gold_medals
+    end
 
+    def self.update( options )
+      sql = "UPDATE nations set
+            name='#{options['name'] }'
+            WHERE id=#{options['id']}"
+      SqlRunner.run( sql )
     end  
+    
+    # def nation_gold_medals
+
+    # end  
 
   end
 

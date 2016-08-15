@@ -9,20 +9,20 @@
   <input type="text" name="last_name"><br>
 
   <label for="nation">Select a Nation:</label></font>
-      <select name="nation_id">
-       
-        <% @nations.each do |nation|  %>
-          <option value=<%=nation.id %> > <%= nation.name %> </option>
-        <% end %>
-      </select>
+  <select name="nation_id">
+   
+    <% @nations.each do |nation|  %>
+    <option value=<%=nation.id %> > <%= nation.name %> </option>
+    <% end %>
+  </select>
 
-      <label for="event">Select an Event:</label></font>
-          <select name="event_id">
-           
-            <% @events.each do |event|  %>
-              <option value=<%=event.id %> > <%= event.name %> </option>
-            <% end %>
-          </select>
+  <label for="event">Select an Event:</label></font>
+  <select name="event_id">
+   
+    <% @events.each do |event|  %>
+    <option value=<%=event.id %> > <%= event.name %> </option>
+    <% end %>
+  </select>
 
   <input type='submit' value="ADD AN ATHLETE">
 </form>
