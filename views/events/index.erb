@@ -1,6 +1,6 @@
 <div>
 <% @events.each do |event| %>
-  <a href="/events/<%= event.id  %>"><%= event.name %></a> Athletes: <%= event.athlete %> Nations: <%= event.nation %> <br><hr>
+  <a href="/events/<%= event.id  %>"><%= event.name %></a> <br><hr>
 <% end %>
 
 <a href="/events/new">Add new event</a><br>

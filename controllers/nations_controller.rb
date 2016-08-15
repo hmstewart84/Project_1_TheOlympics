@@ -8,6 +8,8 @@ end
 
 #new
 get '/nations/new' do
+  @events = Event.all()
+  @athletes = Athlete.all()
   erb(:'nations/new')
 end
 
@@ -19,6 +21,8 @@ end
 
 #edit
 get '/nations/:id/edit' do
+  @nation = Nation.find(params[:id])
+  erb(:'nations/edit')
 end
 
 #create

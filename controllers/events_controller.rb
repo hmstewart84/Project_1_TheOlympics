@@ -19,6 +19,7 @@ end
 
 #edit
 get '/events/:id/edit' do
+  @event = Event.new(params[:id])
 end
 
 #create

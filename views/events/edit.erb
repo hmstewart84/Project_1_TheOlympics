@@ -1,0 +1,12 @@
+div class="content">
+
+  <h2>Edit Event</h2>
+
+  <form action="/events/<%= @event.id %>" method="post">
+    <label for="name">Name:</label>
+    <input type="text" name="name" value="<%= @event.name %>"><br>
+
+    <input type='submit' value="Update Event">
+  </form>
+
+</div>
