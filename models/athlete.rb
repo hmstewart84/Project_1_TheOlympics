@@ -13,7 +13,7 @@ class Athlete
   end
 
   def pretty_name
-    return @first_name.concat( "#{@last_name}" )
+    return @first_name.concat( " #{@last_name}" )
   end  
 
   def save()
@@ -56,9 +56,15 @@ class Athlete
     SqlRunner.run( sql )
   end  
 
-  # def gold_medals
-
-  # end
+  def gold_medals
+    gold_medals = []
+    events.each do |event|
+  if event.gold_id.to_i = id
+    return result
+  end
+    gold_medals << result
+  end
+end
   
   # def silver_medals
 
