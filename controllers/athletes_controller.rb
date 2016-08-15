@@ -16,24 +16,26 @@ end
 #show
 get '/athletes/:id' do
   @athlete = Athlete.find(params['id'])
-  erb(:'athlete/show')
+  erb(:'athletes/show')
 end
 
 #edit
-get '/athlete/:id/edit' do
+get '/athletes/:id/edit' do
+  @athlete = Athlete.new(params[:id])
+  erb(:'athletes/edit')
 end
 
 #create
-post '/athlete' do
+post '/athletes' do
   @athlete = Athlete.new(params)
   @athlete.save
-  redirect to( "athlete" )
+  redirect to( "athletes" )
 end
 
 #update
-post '/athlete/:id' do
+post '/athletes/:id' do
 end
 
 #delete
-delete '/athlete' do
+delete '/athletes' do
 end

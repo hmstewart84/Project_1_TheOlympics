@@ -19,6 +19,8 @@ end
 
 #edit
 get '/participations/:id/edit' do
+  @participation = Participation.new(params[:id])
+  erb(:'participations/edit')
 end
 
 #create
