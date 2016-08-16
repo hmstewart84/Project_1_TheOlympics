@@ -35,5 +35,5 @@ post '/participations/:id' do
 end
 
 #delete
-delete '/participations' do
+delete '/participations/:id' do
 end

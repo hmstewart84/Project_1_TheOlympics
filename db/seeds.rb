@@ -3,6 +3,8 @@ require_relative('../models/athlete.rb')
 require_relative('../models/event.rb')
 require_relative('../models/nation.rb')
 require_relative('../models/participation.rb')
+require_relative('../models/standing.rb')
+
 
 Athlete.delete_all()
 Event.delete_all()
@@ -34,19 +36,17 @@ athlete3.save
 athlete4.save
 athlete5.save
 
-
-event1 = Event.new({ 'name' => 'Ping pong'})
-event2 = Event.new({ 'name' => 'Javelin'})
-event3 = Event.new({ 'name' => 'High jump'})
-event4 = Event.new({ 'name' => 'Tennis'})
-event5 = Event.new({ 'name' => 'Shot put'})
+event1 = Event.new({ 'name' => 'Ping pong', 'gold_id' => athlete5.id, 'silver_id' => athlete3.id, 'bronze_id' => athlete1.id })
+event2 = Event.new({ 'name' => 'Javelin', 'gold_id' => athlete4.id, 'silver_id' => athlete2.id, 'bronze_id' => athlete1.id })
+event3 = Event.new({ 'name' => 'Synchronised swimming', 'gold_id' => athlete2.id, 'silver_id' => athlete3.id, 'bronze_id' => athlete5.id })
+event4 = Event.new({ 'name' => 'Dressage', 'gold_id' => athlete2.id, 'silver_id' => athlete4.id, 'bronze_id' => athlete5.id })
+event5 = Event.new({ 'name' => 'Badminton', 'gold_id' => athlete5.id, 'silver_id' => athlete1.id, 'bronze_id' => athlete3.id })
 
 event1.save
 event2.save
 event3.save
 event4.save
 event5.save
-
 
 participation1 = Participation.new({'athlete_id' => athlete1.id, 'event_id' => event1.id})
 participation2 = Participation.new({'athlete_id' => athlete2.id, 'event_id' => event2.id})
@@ -60,3 +60,10 @@ participation3.save
 participation4.save
 participation5.save
 
+standing = Standing.new( Athlete.all, Event.all )
+
+athlete5medals = standing.gold_medals_by_athlete( athlete5.id )
+
+
+# binding.pry
+# nil

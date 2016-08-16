@@ -1,19 +1,21 @@
 body { 
-    background-image: url('https://lovelace-media.imgix.net/getty/589317114.jpg?w=1200&h=1200&fit=max&auto=format&q=70');
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-position: center; 
-    background-size: 1400px;
-    background-blend-mode: lighten;
+  background-image: url('https://lovelace-media.imgix.net/getty/589317114.jpg?w=1200&h=1200&fit=max&auto=format&q=70');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center; 
+  background-size: 1400px;
+  background-blend-mode: lighten;
 }
 
-input, div {
+div {
   font-family: 'Lato', sans-serif;
   text-decoration: none;
   font: bold;
   color: white;
 
 }
+
+
 
 a{
   text-decoration: none;
@@ -23,41 +25,43 @@ a{
 
 
 
+
 a:hover {
   background-color: green;
 
 }
 
 h1 {
-    font-family: 'Lato', sans-serif;
-    font: bold;
-        color: white; 
-        text-shadow: 2px 2px 1px #000,
-                     -2px -2px 1px #000,
-                     -2px 2px 1px #000,
-                      2px -2px 1px #000;
-     
+  font-family: 'Lato', sans-serif;
+  font: bold;
+  color: white;
+  text-shadow: 2px 2px 1px #000,
+  -2px -2px 1px #000,
+  -2px 2px 1px #000,
+  2px -2px 1px #000;
+
 }
 
 
 label, h3, p {
-    font-family: 'Lato', sans-serif;
-        color: white;  
-        text-shadow: 2px 2px 1px #000,
-                     -2px -2px 1px #000,
-                     -2px 2px 1px #000,
-                      2px -2px 1px #000;
-    
+  font-family: 'Lato', sans-serif;
+  font: bold;
+  color: white;
+  text-shadow: 2px 2px 1px #000,
+  -2px -2px 1px #000,
+  -2px 2px 1px #000,
+  2px -2px 1px #000;
+
 }
 
 h2 {
   font-family: 'Nobile', Helvetica, Arial, sans-serif;
-      color: white;
-      text-shadow: 2px 2px 1px #000,
-                   -2px -2px 1px #000,
-                   -2px 2px 1px #000,
-                    2px -2px 1px #000;
-
+  font-weight: bold;
+  color: white;
+  text-shadow: 2px 2px 1px #000,
+  -2px -2px 1px #000,
+  -2px 2px 1px #000,
+  2px -2px 1px #000;
 }
 
 /*
@@ -115,7 +119,7 @@ body
     }
 
     select { border: 3px solid #CCC }
-*/
+    */
     body {
       background-color: none;
       margin:200px 200px 200px 200px;
@@ -141,16 +145,16 @@ body
   
         width: 400px;
         height: 400px;
-    }*/
+        }*/
 
-    div#fixedfooter {
-      position:fixed;
-      bottom:0px;
-      left:0px;
-      width:200%;
-      color:#000000;
-      background: #52CC00;
-      padding:20px;
-    }
+        div#fixedfooter {
+          position:fixed;
+          bottom:0px;
+          left:0px;
+          width:200%;
+          color:#000000;
+          background: #52CC00;
+          padding:20px;
+        }
 
 

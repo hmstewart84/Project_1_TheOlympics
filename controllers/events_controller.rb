@@ -37,7 +37,7 @@ post '/events/:id' do
 end
 
 #delete
-delete '/events' do
+delete '/events/:id' do
   Event.destroy( params[:id] )
   redirect to('/events')
 end

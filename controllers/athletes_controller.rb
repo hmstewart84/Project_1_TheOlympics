@@ -40,7 +40,7 @@ post '/athletes/:id' do
 end
 
 #delete
-delete '/athletes' do
+delete '/athletes/:id' do
   Athlete.destroy( params[:id] )
   redirect to('/athletes')
 end

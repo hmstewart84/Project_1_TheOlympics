@@ -1,8 +1,12 @@
 <div>
 <% @athletes.each do |athlete| %>
-  <a href="/athletes/<%= athlete.id  %>"><%= athlete.pretty_name %></a> Nation: <%= athlete.nation.name %> Event: <%= athlete.events.first.name %> <br><hr>
+  <a href="/athletes/<%= athlete.id  %>"><%= athlete.pretty_name %></a> Nation: <%= athlete.nation.name %> Events: 
+  <% athlete.events.each do | event | %>
+    <p><%= event.name  %></p>
+  <% end %> 
+
+  <br><hr>
 <% end %>
 
 <a href="/athletes/new">Add new athlete</a><br>
-</div>
-
+</div> 

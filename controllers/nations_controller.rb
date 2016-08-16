@@ -39,7 +39,7 @@ redirect to( "/nations/#{params[:id]}" )
 end
 
 #delete
-delete '/nations' do
+delete '/nations/:id' do
   Nation.destroy( params[:id] )
   redirect to('/nations')
 end

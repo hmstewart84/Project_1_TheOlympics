@@ -1,5 +1,6 @@
 require('pg')
 require_relative('../db/sql_runner')
+require( 'pry-byebug' )
 
 
 class Event
@@ -15,7 +16,7 @@ class Event
   end
 
   def save()
-    sql = "INSERT INTO events (name) VALUES ('#{@name}') RETURNING *"
+    sql = "INSERT INTO events (name, gold_id, silver_id, bronze_id) VALUES ('#{@name}', #{@gold_id}, #{@silver_id}, #{@bronze_id} ) RETURNING *"
     event = SqlRunner.run(sql).first
     @id = event['id']
   end
@@ -53,9 +54,9 @@ class Event
 
   def self.update( options )
     sql = "UPDATE events set
-    name='#{options['name'] }'
-    gold_id='#{options['gold_id'] }'
-    silver_id='#{options['silver_id'] }'
+    name='#{options['name'] }',
+    gold_id='#{options['gold_id'] }',
+    silver_id='#{options['silver_id'] }',
     bronze_id='#{options['bronze_id'] }'
     WHERE id=#{options['id']}"
     SqlRunner.run( sql )

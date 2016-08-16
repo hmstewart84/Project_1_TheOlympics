@@ -19,7 +19,7 @@ class Athlete
   def save()
     sql = "INSERT INTO athletes (first_name, last_name, nation_id) VALUES ('#{@first_name}', '#{@last_name}', '#{@nation_id}' ) RETURNING *"
     athlete = SqlRunner.run(sql).first
-    @id = athlete['id']
+    @id = athlete['id'].to_i
   end
 
   def self.all()
@@ -54,25 +54,7 @@ class Athlete
           last_name= '#{options['last_name'] }'
           WHERE id=#{options['id']}"
     SqlRunner.run( sql )
-  end  
-
-#   def gold_medals
-#     gold_medals = []
-#     events.each do |event|
-#   if event.gold_id.to_i = id
-#     return result
-#   end
-#     gold_medals << result
-#   end
-# end
-  
-  # def silver_medals
-
-  # end
-
-  # def bronze_medals
-
-  # end  
+  end 
 
   def nation()
     sql = "SELECT * FROM nations WHERE id = #{@nation_id}"
@@ -82,6 +64,62 @@ class Athlete
   def events()
     sql = "SELECT e.* FROM events e INNER JOIN participations p ON p.event_id = e.id WHERE p.athlete_id = #{@id}"
     return Event.map_items(sql)
+  end 
+
+  def gold_medals()
+    gold_medals = []
+    @events.each do |event|
+      if event.gold_id.to_i == @id
+        gold_medals << event
+      end
+    end
+    return gold_medals
+  end
+
+    
+  def silver_medals
+    silver_medals = []
+    @events.each do |event|
+      if event.silver_id.to_i == @id
+        silver_medals << event
+      end
+    end
+    return silver_medals
   end  
 
+    def bronze_medals
+      bronze_medals = []
+      events.each do |event|
+    if event.bronze_id.to_i == @id
+      bronze_medals << event
+      end
+    end  
+      return bronze_medals
+    end 
+
 end
+
+def gold_medal_points()
+    gold_medal_points = (gold_medals.count * 5) 
+    return gold_medal_points
+end
+
+def silver_medal_points()
+    silver_medal_points = (silver_medals.count * 3) 
+    return silver_medal_points
+end
+
+def bronze_medal_points()
+    bronze_medal_points = (bronze_medals.count * 1) 
+    return bronze_medal_points
+end
+
+def gold_medals_count()
+    gold_medals = 0
+    events.each do |event|
+      if event.gold_id.to_i == @id
+        gold_medals += 1
+      end
+    end
+    return gold_medals
+  end  
