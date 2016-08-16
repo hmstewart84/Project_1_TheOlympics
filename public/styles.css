@@ -15,6 +15,19 @@ input, div {
 
 }
 
+a{
+  text-decoration: none;
+  color: white;
+
+}
+
+
+
+a:hover {
+  background-color: green;
+
+}
+
 h1 {
     font-family: 'Lato', sans-serif;
     font: bold;
