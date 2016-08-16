@@ -14,6 +14,7 @@ end
 #show
 get '/events/:id' do
   @event = Event.find(params['id'])
+  @athletes = @event.athletes
   erb(:'events/show')
 end
 

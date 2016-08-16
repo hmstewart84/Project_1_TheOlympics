@@ -62,6 +62,7 @@ participation5.save
 
 standing = Standing.new( Athlete.all, Event.all )
 
+athlete4medals = standing.gold_medals_by_athlete( athlete5.id )
 athlete5medals = standing.gold_medals_by_athlete( athlete5.id )
 
 

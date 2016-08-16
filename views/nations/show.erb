@@ -1,3 +1,10 @@
 <div>
 <h1><%= @nation.name %></h1>
+<p></p>
+
+Athletes:
+<p></p>
+<% @athletes.each do |athlete|  %>
+<option value=<%=athlete.id %> > <%= athlete.pretty_name %> </option>
+<% end %>
 </div>

@@ -12,6 +12,20 @@ class Standing
     @events = events
   end
 
+  def get_nation_medals(nation)
+    #get athletes in nation
+    #get medals for each athlete and add to hoard
+
+  end
+
+  def get_medals(athlete)
+    medals = {
+      gold: gold_medals_by_athlete(athlete.id),
+      silver: silver_medals_by_athlete(athlete.id),
+      bronze: bronze_medals_by_athlete(athlete.id)
+    }
+  end
+
   def gold_medals_by_athlete( athlete_id )
     @events.select do | event | 
       event.gold_id == athlete_id 

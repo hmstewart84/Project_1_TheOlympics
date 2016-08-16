@@ -16,6 +16,7 @@ end
 #show
 get '/nations/:id' do
   @nation = Nation.find(params['id'])
+  @athletes = @nation.athletes
   erb(:'nations/show')
 end
 
