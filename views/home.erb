@@ -1,5 +1,34 @@
 <div>
 
+<% @standing.athletes.each do | athlete | %>
+  
+  <%= athlete.pretty_name %>
 
- 
+  <% medals = @standing.get_medals( athlete.id ) %>
+
+  <% if medals[:gold].length > 0 %>
+    <h2>Gold Medals:</h2>
+    <% medals[:gold].each do |event| %>
+      <p><%= event.name %></p>
+    <% end %>
+  <% end %>
+
+  <% if medals[:silver].length > 0 %>
+    <h2>Silver Medals:</h2>
+    <% medals[:silver].each do |event| %>
+      <p><%= event.name %></p>
+    <% end %>
+  <% end %>
+
+  <% if medals[:bronze].length > 0 %>
+    <h2>Bronze Medals:</h2>
+    <% medals[:bronze].each do |event| %>
+      <p><%= event.name %></p>
+    <% end %>
+  <% end %>
+
+  <hr></hr>
+  
+<% end %>
+
 </div>

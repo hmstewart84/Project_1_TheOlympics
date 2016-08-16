@@ -8,21 +8,21 @@ class Standing
   attr_accessor :athletes, :events
 
   def initialize(athletes, events)
-    @athlete = athletes
+    @athletes = athletes
     @events = events
   end
 
-  def get_nation_medals(nation)
-    #get athletes in nation
-    #get medals for each athlete and add to hoard
+  # def get_nation_medals(nation)
+  #   get athletes in nation
+  #   get medals for each athlete and add to hoard
 
-  end
+  # end
 
-  def get_medals(athlete)
+  def get_medals( athlete_id )
     medals = {
-      gold: gold_medals_by_athlete(athlete.id),
-      silver: silver_medals_by_athlete(athlete.id),
-      bronze: bronze_medals_by_athlete(athlete.id)
+      gold: gold_medals_by_athlete(athlete_id),
+      silver: silver_medals_by_athlete(athlete_id),
+      bronze: bronze_medals_by_athlete(athlete_id)
     }
   end
 

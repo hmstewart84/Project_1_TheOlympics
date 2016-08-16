@@ -49,7 +49,7 @@ class Event
 
   def athletes
     sql = "SELECT a.* FROM athletes a INNER JOIN participations p ON p.athlete_id = a.id WHERE event_id = #{@id}"
-    return Athlete.map_item(sql)
+    return Athlete.map_items(sql)
   end  
 
   def self.update( options )

@@ -123,3 +123,4 @@ def gold_medals_count()
     end
     return gold_medals
   end  
+  

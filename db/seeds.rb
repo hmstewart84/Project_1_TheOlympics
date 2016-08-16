@@ -29,36 +29,42 @@ athlete2 = Athlete.new({ 'first_name' => 'Katrina', 'last_name' => 'Coutts', 'na
 athlete3 = Athlete.new({ 'first_name' => 'David', 'last_name' => 'Morrison', 'nation_id' => nation3.id})
 athlete4 = Athlete.new({ 'first_name' => 'John', 'last_name' => 'Easton', 'nation_id' => nation4.id})
 athlete5 = Athlete.new({ 'first_name' => 'Michael', 'last_name' => 'Snaddon', 'nation_id' => nation5.id})
+athlete6 = Athlete.new({ 'first_name' => 'Charley', 'last_name' => 'Lawton', 'nation_id' => nation1.id})
 
 athlete1.save
 athlete2.save
 athlete3.save
 athlete4.save
 athlete5.save
+athlete6.save
 
 event1 = Event.new({ 'name' => 'Ping pong', 'gold_id' => athlete5.id, 'silver_id' => athlete3.id, 'bronze_id' => athlete1.id })
 event2 = Event.new({ 'name' => 'Javelin', 'gold_id' => athlete4.id, 'silver_id' => athlete2.id, 'bronze_id' => athlete1.id })
 event3 = Event.new({ 'name' => 'Synchronised swimming', 'gold_id' => athlete2.id, 'silver_id' => athlete3.id, 'bronze_id' => athlete5.id })
 event4 = Event.new({ 'name' => 'Dressage', 'gold_id' => athlete2.id, 'silver_id' => athlete4.id, 'bronze_id' => athlete5.id })
 event5 = Event.new({ 'name' => 'Badminton', 'gold_id' => athlete5.id, 'silver_id' => athlete1.id, 'bronze_id' => athlete3.id })
+event6 = Event.new({ 'name' => 'Archery', 'gold_id' => athlete6.id, 'silver_id' => athlete2.id, 'bronze_id' => athlete3.id })
 
 event1.save
 event2.save
 event3.save
 event4.save
 event5.save
+event6.save
 
 participation1 = Participation.new({'athlete_id' => athlete1.id, 'event_id' => event1.id})
 participation2 = Participation.new({'athlete_id' => athlete2.id, 'event_id' => event2.id})
 participation3 = Participation.new({'athlete_id' => athlete3.id, 'event_id' => event3.id})
 participation4 = Participation.new({'athlete_id' => athlete4.id, 'event_id' => event4.id})
 participation5 = Participation.new({'athlete_id' => athlete5.id, 'event_id' => event5.id})
+participation6 = Participation.new({'athlete_id' => athlete6.id, 'event_id' => event6.id})
 
 participation1.save
 participation2.save
 participation3.save
 participation4.save
 participation5.save
+participation6.save
 
 standing = Standing.new( Athlete.all, Event.all )
 
