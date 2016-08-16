@@ -1,4 +1,4 @@
-<div>
+<!-- <div>
 
 <% @standing.athletes.each do | athlete | %>
   
@@ -7,21 +7,21 @@
   <% medals = @standing.get_medals( athlete.id ) %>
 
   <% if medals[:gold].length > 0 %>
-    <h2>Gold Medals:</h2>
+    <h5>Gold Medals:</h5>
     <% medals[:gold].each do |event| %>
       <p><%= event.name %></p>
     <% end %>
   <% end %>
 
   <% if medals[:silver].length > 0 %>
-    <h2>Silver Medals:</h2>
+    <h5>Silver Medals:</h5>
     <% medals[:silver].each do |event| %>
       <p><%= event.name %></p>
     <% end %>
   <% end %>
 
   <% if medals[:bronze].length > 0 %>
-    <h2>Bronze Medals:</h2>
+    <h5>Bronze Medals:</h5>
     <% medals[:bronze].each do |event| %>
       <p><%= event.name %></p>
     <% end %>
@@ -31,4 +31,49 @@
   
 <% end %>
 
-</div>
+</div> -->
+
+
+
+
+<table style="width:60%">
+<tbody>
+  <tr>
+    <th>Athlete</th>
+    <th><IMG HEIGHT="50px" WIDTH="50px" SRC="https://upload.wikimedia.org/wikipedia/commons/thumb/1/15/Gold_medal.svg/300px-Gold_medal.svg.png">
+</th> 
+    <th><IMG HEIGHT="50px" WIDTH="50px" SRC="https://upload.wikimedia.org/wikipedia/commons/thumb/0/03/Silver_medal.svg/300px-Silver_medal.svg.png"></th>
+    <th><IMG HEIGHT="50px" WIDTH="50px" SRC="https://upload.wikimedia.org/wikipedia/commons/thumb/5/52/Bronze_medal.svg/300px-Bronze_medal.svg.png"></th>
+  </tr>
+  <tr>
+    <td>Hannah Stewart</td>
+    <td>Ping pong, Javelin</td> 
+    <td>Badminton</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>Katrina Coutts</td>
+    <td></td> 
+    <td>Javelin</td> 
+    <td>Synchronised swimming, Dressage</td>
+  </tr>
+  <tr>
+    <td>David Morrison</td>
+    <td>Badminton</td> 
+    <td>Ping pong, Synchronised Swimming</td> 
+    <td></td>
+  </tr>
+  <tr>
+    <td>John Easton</td>
+    <td></td> 
+    <td>Dressage</td> 
+    <td>Javelin</td>
+  </tr>
+  <tr>
+    <td>Michael Snaddon</td>
+    <td>Synchronised Swimming, Dressage</td> 
+    <td></td> 
+    <td>Ping pong, Badminton</td>
+  </tr>
+  </tbody>
+</table>
