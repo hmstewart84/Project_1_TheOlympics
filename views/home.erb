@@ -38,13 +38,64 @@
 
 <table style="width:60%">
 <tbody>
-  <tr>
-    <th>Athlete</th>
-    <th><IMG HEIGHT="50px" WIDTH="50px" SRC="https://upload.wikimedia.org/wikipedia/commons/thumb/1/15/Gold_medal.svg/300px-Gold_medal.svg.png">
-</th> 
-    <th><IMG HEIGHT="50px" WIDTH="50px" SRC="https://upload.wikimedia.org/wikipedia/commons/thumb/0/03/Silver_medal.svg/300px-Silver_medal.svg.png"></th>
-    <th><IMG HEIGHT="50px" WIDTH="50px" SRC="https://upload.wikimedia.org/wikipedia/commons/thumb/5/52/Bronze_medal.svg/300px-Bronze_medal.svg.png"></th>
-  </tr>
+  <thead>
+    <tr>
+      <th>Athlete</th>
+      <th>
+        <img HEIGHT="50px" WIDTH="50px" SRC="https://upload.wikimedia.org/wikipedia/commons/thumb/1/15/Gold_medal.svg/300px-Gold_medal.svg.png">
+      </th> 
+      <th>
+        <img HEIGHT="50px" WIDTH="50px" SRC="https://upload.wikimedia.org/wikipedia/commons/thumb/0/03/Silver_medal.svg/300px-Silver_medal.svg.png">
+      </th>
+      <th>
+        <img HEIGHT="50px" WIDTH="50px" SRC="https://upload.wikimedia.org/wikipedia/commons/thumb/5/52/Bronze_medal.svg/300px-Bronze_medal.svg.png">
+      </th>
+    </tr>
+  </thead>
+  <tbody>
+
+
+  <% @standing.athletes.each do | athlete | %>
+    <% medals = @standing.get_medals( athlete.id ) %>
+    <tr> 
+      <td><%= athlete.first_name() %></td>
+
+      <% if medals[:gold].length > 0 %>
+      <td>
+        <% medals[:gold].each do |event| %>
+          <p><%= event.name %></p>
+        <% end %>
+      </td>
+      <% else %>
+      <td></td>
+      <% end %>
+
+      <% if medals[:silver].length > 0 %>
+      <td>
+        <% medals[:silver].each do |event| %>
+          <p><%= event.name %></p>
+        <% end %>
+      </td>
+      <% else %>
+      <td></td>
+      <% end %>
+
+      <% if medals[:bronze].length > 0 %>
+      <td>
+        <% medals[:bronze].each do |event| %>
+          <p><%= event.name %></p>
+        <% end %>
+      </td>
+      <% else %>
+      <td></td>
+      <% end %>
+    </tr>
+    
+  <% end %>
+
+
+<!-- 
+
   <tr>
     <td>Hannah Stewart</td>
     <td>Ping pong, Javelin</td> 
@@ -74,6 +125,6 @@
     <td>Synchronised Swimming, Dressage</td> 
     <td></td> 
     <td>Ping pong, Badminton</td>
-  </tr>
+  </tr> -->
   </tbody>
 </table>
